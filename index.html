@@ -1,1 +1,433 @@
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | M. Amir Kudsi</title>
+    <!-- SEO Meta Tags for Professional Link Sharing -->
+    <meta name="description" content="Digitales Portfolio von M. Amir Kudsi, einem motivierten Berufseinsteiger mit Erfahrung in Verkauf, Technik und Design.">
+    <meta name="keywords" content="Portfolio, M. Amir Kudsi, Bewerbung, Lebenslauf, Verkäufer, Technik, Oberhausen">
+    <meta name="author" content="M. Amir Kudsi">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000000;
+            color: #E5E7EB;
+        }
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+        }
+        .card-bg {
+            background-color: #111111;
+            border: 1px solid #222;
+            transition: all 0.3s ease;
+        }
+        .card-bg:hover {
+            border-color: #34D399;
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(52, 211, 153, 0.1);
+        }
+        .text-gradient-green {
+            background: linear-gradient(90deg, #34D399, #A7F3D0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .cta-button {
+            background-color: #34D399;
+            color: #000;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(52, 211, 153, 0.4);
+        }
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 0 30px rgba(52, 211, 153, 0.7);
+        }
+        .typing-cursor {
+            display: inline-block;
+            width: 3px;
+            height: 2.5rem; 
+            background-color: #34D399;
+            animation: blink 0.8s infinite;
+            margin-left: 5px;
+            vertical-align: middle;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        .interactive-link {
+            display: inline-block;
+            border-radius: 8px;
+            padding: 0.5rem;
+            margin-left: -0.5rem;
+            transition: all 0.3s ease-in-out;
+        }
+        .interactive-link:hover {
+            background-color: rgba(52, 211, 153, 0.05);
+        }
+        .interactive-link h4 {
+             transition: text-shadow 0.3s ease-out;
+        }
+        .interactive-link:hover h4 {
+            text-shadow: 0 0 16px rgba(52, 211, 153, 0.9);
+        }
+        #mobile-menu-panel {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        #mobile-menu-panel.open {
+            transform: translateX(0);
+        }
+        #menu-backdrop {
+            transition: opacity 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="antialiased">
 
+    <header class="bg-black/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-800">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold">
+                <a href="#hero" class="text-gradient-green">A. Kudsi</a>
+            </div>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#about" class="text-gray-300 hover:text-emerald-400 transition duration-300">Über Mich</a>
+                <a href="#resume" class="text-gray-300 hover:text-emerald-400 transition duration-300">Werdegang</a>
+                <a href="#education" class="text-gray-300 hover:text-emerald-400 transition duration-300">Bildung</a>
+                <a href="#skills" class="text-gray-300 hover:text-emerald-400 transition duration-300">Kompetenzen</a>
+                <a href="#contact" class="text-gray-300 hover:text-emerald-400 transition duration-300">Kontakt</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-200 focus:outline-none" aria-controls="mobile-menu-panel" aria-expanded="false">
+                    <span class="sr-only">Menü öffnen</span>
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <div id="menu-backdrop" class="fixed inset-0 bg-black/60 z-[55] opacity-0 pointer-events-none" aria-hidden="true"></div>
+    <div id="mobile-menu-panel" class="fixed top-0 right-0 h-full w-72 bg-[#111111] border-l border-gray-800 z-[60] p-6 overflow-y-auto">
+        <div class="flex justify-between items-center mb-8">
+            <h2 class="text-xl font-bold text-white">Menü</h2>
+            <button id="close-menu-button" class="text-gray-400 hover:text-white">
+                <span class="sr-only">Menü schließen</span>
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+        </div>
+        <div class="flex flex-col space-y-4">
+            <a href="#about" class="mobile-nav-link text-gray-300 hover:text-emerald-400 py-2 text-lg">Über Mich</a>
+            <a href="#resume" class="mobile-nav-link text-gray-300 hover:text-emerald-400 py-2 text-lg">Werdegang</a>
+            <a href="#education" class="mobile-nav-link text-gray-300 hover:text-emerald-400 py-2 text-lg">Bildung</a>
+            <a href="#skills" class="mobile-nav-link text-gray-300 hover:text-emerald-400 py-2 text-lg">Kompetenzen</a>
+            <a href="#contact" class="mobile-nav-link text-gray-300 hover:text-emerald-400 py-2 text-lg">Kontakt</a>
+        </div>
+        <hr class="border-gray-700 my-8">
+        <div>
+            <h3 class="text-lg font-semibold text-white mb-4">Wichtige Dokumente</h3>
+            <div class="flex flex-col space-y-3">
+                <a href="https://drive.google.com/file/d/1Mx6ARvOiYiscQVeGslnJOdQIhjwMouFK/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-gray-300 hover:text-emerald-400 transition"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg><span>Lebenslauf (PDF)</span></a>
+                <a href="https://drive.google.com/file/d/1bLFepPaztBiCz_f-XpaypoiZEoCQIZlk/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-gray-300 hover:text-emerald-400 transition"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg><span>FOR Zeugnis (PDF)</span></a>
+                <a href="https://drive.google.com/file/d/151G1wH60p9q6yTAHPeYdw0thsiIWz6Up/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-gray-300 hover:text-emerald-400 transition"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg><span>Ausweis (PDF)</span></a>
+            </div>
+        </div>
+    </div>
+
+    <main class="container mx-auto px-6">
+        <section id="hero" class="min-h-screen flex flex-col md:flex-row items-center justify-center text-center md:text-left py-12">
+            <div class="md:w-3/5">
+                <h2 class="text-2xl md:text-3xl font-medium text-emerald-400 mb-2">M. Amir Kudsi</h2>
+                <h1 class="text-4xl md:text-6xl font-bold text-gray-100 mb-6 leading-tight">
+                    <span id="typing-text"></span><span class="typing-cursor"></span>
+                </h1>
+                <p class="text-lg text-gray-400 mb-10 max-w-xl mx-auto md:mx-0">Motivierter und lernbereiter Berufseinsteiger mit praktischer Erfahrung und einem klaren Ziel vor Augen: Jedes Projekt zum Erfolg zu führen.</p>
+                <a href="#contact" class="cta-button font-bold py-3 px-8 rounded-lg inline-block">Jetzt Kontaktieren</a>
+            </div>
+            <div class="md:w-2/5 mt-16 md:mt-0 flex justify-center items-center">
+                <div class="relative text-center select-none" style="width: 320px; height: 320px;">
+                    <span class="absolute inset-0 flex items-center justify-center text-[14rem] font-black leading-none text-gradient-green opacity-10" aria-hidden="true">AK</span>
+                    <h2 class="absolute inset-0 flex items-center justify-center text-5xl font-bold text-gray-200" style="text-shadow: 0 0 15px rgba(0,0,0,0.5);">
+                        M. Amir Kudsi
+                    </h2>
+                </div>
+            </div>
+        </section>
+
+         <section id="about" class="min-h-screen flex flex-col justify-center py-24">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-100">Mein Profil</h2>
+                <div class="w-24 h-1 bg-emerald-500 mx-auto mt-4 rounded-full"></div>
+                <p class="text-gray-400 mt-8 max-w-3xl mx-auto">
+                    Willkommen in meinem digitalen Portfolio! Anstelle eines klassischen Lebenslaufs möchte ich Ihnen hier einen dynamischen und direkten Einblick in meine Fähigkeiten und meinen Werdegang geben.
+                </p>
+            </div>
+            <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+                <div class="card-bg p-8 rounded-xl text-center flex flex-col">
+                    <h3 class="text-2xl font-semibold text-emerald-400 mb-4">Meine Arbeitsweise</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        Ich bin ein kommunikativer Teamplayer, für den absolute Pünktlichkeit selbstverständlich ist. Mit meiner ausgeprägten Anpassungsfähigkeit und einer lösungsorientierten Haltung stelle ich mich engagiert jeder neuen Herausforderung.
+                    </p>
+                </div>
+                <div class="card-bg p-8 rounded-xl text-center flex flex-col">
+                    <h3 class="text-2xl font-semibold text-emerald-400 mb-4">Persönliche Daten</h3>
+                    <div class="text-left text-gray-300 space-y-3 mx-auto flex-grow flex flex-col justify-center">
+                        <p><strong class="font-medium text-gray-100 w-40 inline-block">Geboren:</strong> 25. Juli 2006</p>
+                        <p><strong class="font-medium text-gray-100 w-40 inline-block">Geburtsort:</strong> Aleppo, Syrien</p>
+                        <p><strong class="font-medium text-gray-100 w-40 inline-block">Staatsangehörigkeit:</strong> Syrisch</p>
+                        <p><strong class="font-medium text-gray-100 w-40 inline-block">Familienstand:</strong> Ledig</p>
+                        <p><strong class="font-medium text-gray-100 w-40 inline-block">Adresse:</strong> Holderstraße 17, 46149 Oberhausen</p>
+                        <p><strong class="font-medium text-gray-100 w-40 inline-block">Mobilität:</strong> Deutschlandticket</p>
+                    </div>
+                </div>
+                <div class="card-bg p-8 rounded-xl text-center flex flex-col">
+                    <h3 class="text-2xl font-semibold text-emerald-400 mb-4">Herkunft & Antrieb</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        Ich stamme aus einer Unternehmerfamilie in Syrien. Der Krieg zwang uns, alles zurückzulassen, was uns auf eine anspruchsvolle Reise durch die Türkei und Ägypten führte. Häufige Schulwechsel in dieser Zeit haben meine Anpassungsfähigkeit enorm gestärkt. Die bewusste Entscheidung, nach Deutschland zu kommen, um die hier gebotenen Bildungschancen zu ergreifen, ist heute mein stärkster Antrieb.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Note for future reference: The dates in this section are intentionally set in the future (2025) to reflect planned career steps. -->
+        <section id="resume" class="min-h-screen flex flex-col justify-center py-24">
+            <div class="text-center mb-16"><h2 class="text-4xl font-bold text-gray-100">Beruflicher Werdegang</h2><div class="w-24 h-1 bg-emerald-500 mx-auto mt-4 rounded-full"></div></div>
+            <div class="max-w-3xl mx-auto card-bg p-8 md:p-12 rounded-xl">
+                <div id="timeline-container" class="relative overflow-hidden transition-all duration-700 ease-in-out max-h-[380px]">
+                    <div class="absolute left-[0.43rem] top-1 bottom-0 w-0.5 bg-gray-700" aria-hidden="true"></div>
+                    <div class="relative pl-12 pb-10"><div class="absolute left-0 top-1 h-4 w-4 rounded-full bg-emerald-500 border-2 border-gray-800"></div><p class="text-sm text-emerald-400 mb-1">Seit 10.2025</p><h4 class="font-bold text-xl text-gray-100">Ausbildung zum Verkäufer (Betriebswechsel)</h4><p class="text-gray-400">XXXLutz Rück, Oberhausen</p></div>
+                    <div class="relative pl-12 pb-10"><div class="absolute left-0 top-1 h-4 w-4 rounded-full bg-emerald-500 border-2 border-gray-800"></div><p class="text-sm text-emerald-400 mb-1">08.2025 - 10.2025</p><h4 class="font-bold text-xl text-gray-100">Ausbildung zum Verkäufer</h4><p class="text-gray-400">Möbel Bernskötter, Mülheim a. d. Ruhr</p></div>
+                    <div class="relative pl-12 pb-10"><div class="absolute left-0 top-1 h-4 w-4 rounded-full bg-emerald-500 border-2 border-gray-800"></div><p class="text-sm text-emerald-400 mb-1">04.2025 – 06.2025</p><h4 class="font-bold text-xl text-gray-100">Security Mitarbeiter (Minijob)</h4><p class="text-gray-400">MSM Security Service GmbH</p></div>
+                    <div class="relative pl-12 pb-10"><div class="absolute left-0 top-1 h-4 w-4 rounded-full bg-emerald-500 border-2 border-gray-800"></div><p class="text-sm text-emerald-400 mb-1">10.2024 – 04.2025</p><h4 class="font-bold text-xl text-gray-100">Projekt „Skill Boost“</h4><p class="text-gray-400">Kolping Bildung Deutschland gGmbH, Oberhausen</p></div>
+                    <div class="relative pl-12 pb-10"><div class="absolute left-0 top-1 h-4 w-4 rounded-full bg-emerald-500 border-2 border-gray-800"></div><p class="text-sm text-emerald-400 mb-1">05.2024 – 10.2024</p><h4 class="font-bold text-xl text-gray-100">Familiäre Pflegezeit & Weiterbildung</h4><p class="text-gray-400">Pflegeunterstützung und Selbststudium in MS Office</p></div>
+                    <div class="relative pl-12 pb-10"><div class="absolute left-0 top-1 h-4 w-4 rounded-full bg-emerald-500 border-2 border-gray-800"></div><p class="text-sm text-emerald-400 mb-1">04.2024 – 05.2024</p><h4 class="font-bold text-xl text-gray-100">Koch (Minijob)</h4><p class="text-gray-400">Alqimma Restaurant, Oberhausen</p></div>
+                    <div class="relative pl-12 pb-10"><div class="absolute left-0 top-1 h-4 w-4 rounded-full bg-emerald-500 border-2 border-gray-800"></div><p class="text-sm text-emerald-400 mb-1">01.2024 – 03.2024</p><h4 class="font-bold text-xl text-gray-100">Probezeit Ausbildung Elektrotechnik</h4><p class="text-gray-400">Y&H Bauservice, Oberhausen</p></div>
+                </div>
+                 <div class="mt-6 text-center">
+                    <button id="show-more-button" class="text-emerald-400 hover:text-white transition duration-300 font-semibold inline-flex items-center gap-2">
+                        <span id="button-text">Vollständigen Werdegang anzeigen</span>
+                        <svg id="button-arrow" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="min-h-screen flex flex-col justify-center py-24">
+            <div class="text-center mb-16"><h2 class="text-4xl font-bold text-gray-100">Bildungsweg & Praktika</h2><div class="w-24 h-1 bg-emerald-500 mx-auto mt-4 rounded-full"></div></div>
+            <div class="max-w-4xl mx-auto w-full grid md:grid-cols-2 gap-16">
+                <div>
+                    <h3 class="text-2xl font-semibold text-center mb-8 text-emerald-400">Schulbildung</h3>
+                    <div class="card-bg p-8 rounded-xl">
+                        <div class="relative">
+                            <div class="absolute left-[0.43rem] top-1 bottom-0 w-0.5 bg-gray-700" aria-hidden="true"></div>
+                            <div class="relative pl-12 pb-10"><div class="absolute left-0 top-1 h-4 w-4 rounded-full bg-emerald-500 border-2 border-gray-800"></div><p class="text-sm text-emerald-400 mb-1">Seit 08.2025</p><h4 class="font-bold text-xl text-gray-100">MÖFA Fachschule des Möbelhandels</h4><p class="text-gray-400">Köln (Berufsschule zur Ausbildung)</p></div>
+                            <div class="relative pl-12 pb-10"><div class="absolute left-0 top-1 h-4 w-4 rounded-full bg-emerald-500 border-2 border-gray-800"></div><p class="text-sm text-emerald-400 mb-1">08.2021 – 06.2023</p>
+                                <a href="https://drive.google.com/file/d/1bLFepPaztBiCz_f-XpaypoiZEoCQIZlk/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="group interactive-link" title="Klicken, um das Zeugnis anzuzeigen">
+                                    <h4 class="font-bold text-xl text-gray-100 inline-flex items-center gap-2 group-hover:text-emerald-400">
+                                        Fasia Jansen Gesamtschule
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 opacity-70 group-hover:opacity-100" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                        </svg>
+                                    </h4>
+                                    <p class="text-gray-400">Abschluss: Fachoberschulreife (FOR)</p>
+                                </a>
+                            </div>
+                            <div class="relative pl-12 pb-10"><div class="absolute left-0 top-1 h-4 w-4 rounded-full bg-emerald-500 border-2 border-gray-800"></div><p class="text-sm text-emerald-400 mb-1">08.2019 – 07.2021</p><h4 class="font-bold text-xl text-gray-100">Sekundarschule Leverkusen</h4></div>
+                            <div class="relative pl-12"><div class="absolute left-0 top-1 h-4 w-4 rounded-full bg-emerald-500 border-2 border-gray-800"></div><p class="text-sm text-emerald-400 mb-1">08.2017 – 07.2019</p><h4 class="font-bold text-xl text-gray-100">Lise-Meitner-Gymnasium</h4></div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold text-center mb-8 text-emerald-400">Praktika</h3>
+                    <div class="card-bg p-8 rounded-xl">
+                        <div class="relative">
+                            <div class="absolute left-[0.43rem] top-1 bottom-0 w-0.5 bg-gray-700" aria-hidden="true"></div>
+                            <div class="relative pl-12 pb-10"><div class="absolute left-0 top-1 h-4 w-4 rounded-full bg-emerald-500 border-2 border-gray-800"></div><p class="text-sm text-emerald-400 mb-1">02.2019</p><h4 class="font-bold text-xl text-gray-100">Verkäufer</h4><p class="text-gray-400">ALDI LEV, Leverkusen</p></div>
+                            <div class="relative pl-12"><div class="absolute left-0 top-1 h-4 w-4 rounded-full bg-emerald-500 border-2 border-gray-800"></div><p class="text-sm text-emerald-400 mb-1">02.2017</p><h4 class="font-bold text-xl text-gray-100">Kinderbetreuung</h4><p class="text-gray-400">BAUI Leverkusen</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="min-h-screen flex flex-col justify-center py-24">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-100">Meine Stärken & Kompetenzen</h2>
+                <div class="w-24 h-1 bg-emerald-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+            <div class="max-w-6xl mx-auto space-y-16">
+                <div>
+                    <h3 class="text-2xl font-semibold text-center mb-8 text-emerald-400">Fachliche Kompetenzen</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+                        <div class="card-bg p-6 rounded-lg text-center"><h4 class="font-semibold text-xl text-gray-200">Canva Design</h4><p class="text-gray-400">Erfahren</p></div>
+                        <div class="card-bg p-6 rounded-lg text-center"><h4 class="font-semibold text-xl text-gray-200">Präsentation</h4><p class="text-gray-400">Kreativ & Sicher</p></div>
+                        <div class="card-bg p-6 rounded-lg text-center"><h4 class="font-semibold text-xl text-gray-200">Coding</h4><p class="text-gray-400">Grundlagen (Autodidakt)</p></div>
+                        <div class="card-bg p-6 rounded-lg text-center"><h4 class="font-semibold text-xl text-gray-200">MS Office</h4><p class="text-gray-400">Word, PowerPoint</p></div>
+                        <div class="card-bg p-6 rounded-lg text-center"><h4 class="font-semibold text-xl text-gray-200">Elektrotechnik</h4><p class="text-gray-400">Grundlagen</p></div>
+                        <div class="card-bg p-6 rounded-lg text-center"><h4 class="font-semibold text-xl text-gray-200">Fehlersuche</h4><p class="text-gray-400">Analytisch</p></div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold text-center mb-8 text-emerald-400">Persönliche Stärken</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+                        <div class="card-bg p-6 rounded-lg text-center"><h4 class="font-semibold text-xl text-gray-200">Zuverlässigkeit</h4><p class="text-gray-400">Absolut pünktlich</p></div>
+                        <div class="card-bg p-6 rounded-lg text-center"><h4 class="font-semibold text-xl text-gray-200">Lernbereitschaft</h4><p class="text-gray-400">Sehr hoch</p></div>
+                        <div class="card-bg p-6 rounded-lg text-center"><h4 class="font-semibold text-xl text-gray-200">Teamfähigkeit</h4><p class="text-gray-400">Kommunikativ</p></div>
+                        <div class="card-bg p-6 rounded-lg text-center"><h4 class="font-semibold text-xl text-gray-200">Anpassungsfähigkeit</h4><p class="text-gray-400">Flexibel & Offen</p></div>
+                        <div class="card-bg p-6 rounded-lg text-center"><h4 class="font-semibold text-xl text-gray-200">Belastbarkeit</h4><p class="text-gray-400">Stressresistent</p></div>
+                        <div class="card-bg p-6 rounded-lg text-center"><h4 class="font-semibold text-xl text-gray-200">Auffassungsgabe</h4><p class="text-gray-400">Schnell & Effizient</p></div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold text-center mb-8 text-emerald-400">Sprachen</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                        <div class="card-bg p-6 rounded-lg text-center"><h4 class="font-semibold text-xl text-gray-200">Deutsch</h4><p class="text-gray-400">Verhandlungssicher</p></div>
+                        <div class="card-bg p-6 rounded-lg text-center"><h4 class="font-semibold text-xl text-gray-200">Englisch</h4><p class="text-gray-400">Fließend</p></div>
+                        <div class="card-bg p-6 rounded-lg text-center"><h4 class="font-semibold text-xl text-gray-200">Arabisch</h4><p class="text-gray-400">Muttersprache (diverse Dialekte)</p></div>
+                        <div class="card-bg p-6 rounded-lg text-center"><h4 class="font-semibold text-xl text-gray-200">Türkisch</h4><p class="text-gray-400">Konversationssicher</p></div>
+                        <div class="card-bg p-6 rounded-lg text-center"><h4 class="font-semibold text-xl text-gray-200">Latein</h4><p class="text-gray-400">Grundlagen</p></div>
+                        <div class="card-bg p-6 rounded-lg text-center"><h4 class="font-semibold text-xl text-gray-200">Japanisch</h4><p class="text-gray-400">Grundlagen</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="min-h-screen flex flex-col justify-center py-24">
+            <div class="text-center max-w-2xl mx-auto">
+                <h2 class="text-4xl font-bold text-gray-100">Lassen Sie uns reden</h2>
+                <div class="w-24 h-1 bg-emerald-500 mx-auto mt-4 rounded-full"></div>
+                <p class="text-lg text-gray-400 mt-6 mb-10">Ich bin bereit für den nächsten Schritt und freue mich darauf, von Ihnen zu hören.</p>
+                <div class="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-10 text-lg mt-8">
+                    <a href="mailto:Amirkudsi@icloud.com" class="text-gray-300 hover:text-emerald-400 transition duration-300 flex items-center group"><svg class="w-6 h-6 mr-3 group-hover:text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>Amirkudsi@icloud.com</a>
+                    <a href="tel:+4917631361385" class="text-gray-300 hover:text-emerald-400 transition duration-300 flex items-center group"><svg class="w-6 h-6 mr-3 group-hover:text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>+49 176 313 613 85</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="border-t border-gray-800 text-gray-500 py-6">
+        <div class="container mx-auto px-6 text-center">
+             <p>&copy; 2025 M. Amir Kudsi. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Menu Logic
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenuPanel = document.getElementById('mobile-menu-panel');
+            const menuBackdrop = document.getElementById('menu-backdrop');
+            const closeMenuButton = document.getElementById('close-menu-button');
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+            function openMenu() {
+                if (mobileMenuPanel) {
+                    mobileMenuPanel.classList.add('open');
+                }
+                if (menuBackdrop) {
+                    menuBackdrop.classList.remove('opacity-0', 'pointer-events-none');
+                }
+                if (mobileMenuButton) {
+                    mobileMenuButton.setAttribute('aria-expanded', 'true');
+                }
+            }
+
+            function closeMenu() {
+                if (mobileMenuPanel) {
+                    mobileMenuPanel.classList.remove('open');
+                }
+                if (menuBackdrop) {
+                    menuBackdrop.classList.add('opacity-0', 'pointer-events-none');
+                }
+                if (mobileMenuButton) {
+                    mobileMenuButton.setAttribute('aria-expanded', 'false');
+                }
+            }
+
+            if (mobileMenuButton) mobileMenuButton.addEventListener('click', openMenu);
+            if (closeMenuButton) closeMenuButton.addEventListener('click', closeMenu);
+            if (menuBackdrop) menuBackdrop.addEventListener('click', closeMenu);
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', closeMenu);
+            });
+            
+            // Smooth Scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]:not([href="#"])').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    // Prevent default only for same-page links
+                    if (this.hostname === window.location.hostname && this.pathname === window.location.pathname) {
+                        e.preventDefault();
+                        const targetElement = document.querySelector(this.getAttribute('href'));
+                        if (targetElement) {
+                            targetElement.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    }
+                });
+            });
+
+            // Typing Animation for Hero Section
+            const typingTextElement = document.getElementById('typing-text');
+            if (typingTextElement) {
+                const words = ["Analytischer Denker.", "Engagierter Teamplayer.", "Technikbegeistert."];
+                let wordIndex = 0;
+                let charIndex = 0;
+                let isDeleting = false;
+
+                function type() {
+                    const currentWord = words[wordIndex];
+                    if (isDeleting) {
+                        typingTextElement.textContent = currentWord.substring(0, charIndex - 1);
+                        charIndex--;
+                    } else {
+                        typingTextElement.textContent = currentWord.substring(0, charIndex + 1);
+                        charIndex++;
+                    }
+
+                    if (!isDeleting && charIndex === currentWord.length) {
+                        setTimeout(() => isDeleting = true, 2000);
+                    } else if (isDeleting && charIndex === 0) {
+                        isDeleting = false;
+                        wordIndex = (wordIndex + 1) % words.length;
+                    }
+
+                    const typingSpeed = isDeleting ? 100 : 200;
+                    setTimeout(type, typingSpeed);
+                }
+                type();
+            }
+
+            // "Show More" Button for Timeline
+            const showMoreButton = document.getElementById('show-more-button');
+            const timelineContainer = document.getElementById('timeline-container');
+            const buttonText = document.getElementById('button-text');
+            const buttonArrow = document.getElementById('button-arrow');
+            let isExpanded = false;
+
+            if (showMoreButton && timelineContainer && buttonText && buttonArrow) {
+                showMoreButton.addEventListener('click', () => {
+                    isExpanded = !isExpanded;
+                    if (isExpanded) {
+                        timelineContainer.style.maxHeight = timelineContainer.scrollHeight + "px";
+                        buttonText.textContent = 'Weniger anzeigen';
+                        buttonArrow.style.transform = 'rotate(180deg)';
+                    } else {
+                        // The max-height value should match the one in the initial CSS
+                        timelineContainer.style.maxHeight = '380px';
+                        buttonText.textContent = 'Vollständigen Werdegang anzeigen';
+                        buttonArrow.style.transform = 'rotate(0deg)';
+                    }
+                });
+                // To make the transition smooth, we directly manipulate the style property.
+                // We add the initial max-height via JS to ensure smooth transition on first close.
+                timelineContainer.style.maxHeight = '380px';
+                timelineContainer.style.transition = 'max-height 0.7s ease-in-out';
+            }
+        });
+    </script>
+</body>
+</html>
